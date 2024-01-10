@@ -17,17 +17,30 @@
         //    // 정의할 내용 
         // })
 
-        Object.defineProperty(viewModel, 'str', {
-            // 속성에 접근했을 때의 동작을 정의
-            get: function() {
-                console.log('접근');
-            },
-            // 속ㅇ에 값을 할당했을 때의 동작을 정의
-            set: function(newValue) {
-                console.log('할당', newValue);
-                div.innerHTML = newValue;
+        // 즉시 실행 함수: init과 render가 어떤 어플리케이션 로직에 노출되지 않게 또 다른 유효범위에 넣어줌. 
+        // 오픈소스 라이브러리들이 이런식으로 변수의 유효범위를 관리함.
+        (function() { 
+            function init() {
+                Object.defineProperty(viewModel, 'str', {
+                    // 속성에 접근했을 때의 동작을 정의
+                    get: function () {
+                        console.log('접근');
+                    },
+                    // 속ㅇ에 값을 할당했을 때의 동작을 정의
+                    set: function (newValue) {
+                        console.log('할당', newValue);
+                        render(newValue);
+                    }
+                });
             }
-        })
+
+            function render(value) {
+                div.innerHTML = value;
+            }
+
+            init();
+        })();
+        
     </script>
 </body>
 </html>
