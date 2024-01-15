@@ -10,14 +10,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        // vm: view model
+        // vue에서 제공하는 api(기능)들과 속성들 가지고 있음. 
         var vm = new Vue({
             el: '#app', // id가 app인 태그를 찾아서 인스턴스를 붙이겠다.
             data: {
                 message: 'hi'
             }
         }); 
-        // vm: view model
-        // vue에서 제공하는 api(기능)들과 속성들 가지고 있음. 
+
+        // 함수명 앞글자가 대문자면 생성자 함수. 
+        // 생성자 함수로 Vue에서 어떤 API와 속성들을 다 정해놓고 갖다 쓰거나 재사용하게 되는 패턴.
 
     </script>
 </body>
