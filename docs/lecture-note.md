@@ -9,3 +9,9 @@ $\rightarrow$ n방향 통신의 문제점(과거 MVC 패턴)
 
 - Vue의 컴포넌트 통신 규칙: 데이터가 아래 방향으로만 내려감. 따라서 데이터의 흐름을 추적할 수 있음.
 ![components-communication2](../images/components-communication2.png)
+
+자바스크립트의 비동기 처리 패턴
+1. callback
+2. promise
+3. promise + generator
+4. async & await
