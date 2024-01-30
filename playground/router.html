@@ -7,39 +7,40 @@
 </head>
 <body>
     <div id="app">
-        <!-- 아래 순서 중요 -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/vue-router@3"></script>
-        <script>
-            var LoginComponent = {
-                template: '<div>login</div>'
-            }
-            var MainComponent = {
-                template: '<div>Main</div>'
-            }
-            var router = new VueRouter({
-                // 페이지의 라우팅 정보
-                routes: [ // 배열, 페이지의 개수만큼 객체가 필요
-                    {
-                        // 페이지의 url
-                        path: '/login',
-                        // 해당 url에서 표시될 컴포넌트
-                        component: LoginComponent
-                    },
-                    {
-                        path: '/main',
-                        component: MainComponent
-                    }
-                ]
-            });
-
-            new Vue({
-                el: '#app',
-                router: router
-            });
-
-        </script>
-
+        <!-- router가 연결이 안 되어 있으면 에러 발생 -->
+        <router-view></router-view>
     </div>
-</body>
-</html>
+    <!-- 아래 순서 중요 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3"></script>
+    <script>
+        var LoginComponent = {
+            template: '<div>login</div>'
+        }
+        var MainComponent = {
+            template: '<div>main</div>'
+        }
+        var router = new VueRouter({
+            // 페이지의 라우팅 정보
+            routes: [ // 배열, 페이지의 개수만큼 객체가 필요
+                // 로그인 페이지 정보
+                {
+                    // 페이지의 url
+                    path: '/login',
+                    // 해당 url에서 표시될 컴포넌트
+                    component: LoginComponent
+                },
+                // 메인 페이지 정보
+                {
+                    path: '/main',
+                    component: MainComponent
+                }
+            ]
+        });
+        new Vue({
+            el: '#app',
+            router: router
+        });
+    </script>
+</body
+</html
