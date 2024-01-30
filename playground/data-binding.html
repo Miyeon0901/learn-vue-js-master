@@ -7,8 +7,18 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ num }}</p>
+        <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
+        <!-- <p id="abc1234" class="text-blue">{{ num }}</p> -->
         <p>{{ doubleNum }}</p>
+        <div v-if="loading">
+            Loading...
+        </div>
+        <div v-else>
+            test user has been logged in
+        </div>
+        <div v-show="loading"> <!-- display:none, DOM의 정보는 남아있음. -->
+            Loading...
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,6 +27,9 @@
             el: '#app',
             data: {
                 num: 10,
+                uuid: 'abc1234',
+                name: 'text-blue',
+                loading: true
             },
             computed: {
                 doubleNum: function() {
