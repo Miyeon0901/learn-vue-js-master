@@ -8,7 +8,7 @@
 <body>
     <div id="app">
         <app-header v-bind:propsdata="num"></app-header>
-        <app-content v-on:pass="passNum"></app-content>
+        <app-content v-on:pass="deliverNum"></app-content>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -32,9 +32,8 @@
                 'app-content': appContent
             }, 
             methods: {
-                passNum: function(num) {
-                    console.log(num);
-                    this.num = num;
+                deliverNum: function(value) {
+                    this.num = value;
                 }
             },
             data: {
