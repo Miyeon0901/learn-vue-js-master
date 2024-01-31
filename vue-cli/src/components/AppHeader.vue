@@ -2,13 +2,13 @@
 html 표준 태그인지 컴포넌트 태그인지 브라우저가 알 길이 없음. -->
 <template>
   <header>
-    <h1>Header</h1>
+    <h1>{{ propsdata }}</h1>
   </header>
 </template>
 
 <script>
 export default {
-
+    props: ['propsdata']
 }
 </script>
 

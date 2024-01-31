@@ -1,7 +1,7 @@
 <template>
   <div> <!-- root element가 하나만 있어야 함 -->
-    {{ str }}
-    <app-header></app-header>
+    <!-- <app-header v-bind:프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
+    <app-header v-bind:propsdata="str"></app-header>
   </div>
 </template>
 
@@ -17,10 +17,11 @@ import AppHeader from './components/AppHeader.vue'
 //     str: 'hi'
 //   }
 // })
+
 export default {
   data: function() {
     return {
-      str: 'hi'
+      str: 'Header'
     }
   },
   components: {
