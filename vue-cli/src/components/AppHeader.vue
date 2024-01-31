@@ -3,12 +3,18 @@ html 표준 태그인지 컴포넌트 태그인지 브라우저가 알 길이 �
 <template>
   <header>
     <h1>{{ propsdata }}</h1>
+    <button v-on:click="sendEvent">send</button>
   </header>
 </template>
 
 <script>
 export default {
-    props: ['propsdata']
+    props: ['propsdata'],
+    methods: {
+        sendEvent: function() {
+            this.$emit('renew')
+        }
+    }
 }
 </script>
 
